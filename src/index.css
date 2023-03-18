@@ -57,12 +57,14 @@ header {
 .scroll-container {
   height: 85vh;
   overflow-y: scroll;
+  padding-bottom: 1rem;
 }
 
 .chatroom form {
   position: absolute;
   bottom: 0;
   width: 100%;
+  background-color: #1b2121;
 }
 
 .chatroom .inputs {
@@ -142,6 +144,10 @@ header {
     width: 100dvw;
     height: 100vh;
     height: 100dvh;
+  }
+
+  .scroll-container {
+    padding-bottom: 4rem;
   }
 
   .chatroom form input {
