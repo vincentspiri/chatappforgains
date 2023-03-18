@@ -1,13 +1,151 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --edge-gap: 15px;
+}
+
+body {
+  background-color: #101414;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: sans-serif;
+}
+
+section {
+  color: white;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  height: 3rem;
+  background-color: #1b2121;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.signout-btn {
+  display: grid;
+  place-items: center;
+  border: none;
+  font-size: 20px;
+  width: 2rem;
+  background: none;
+  cursor: pointer;
+}
+
+.signout-btn img {
+  width: 100%;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.chatroom {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  width: 800px;
+  height: 100%;
+}
+
+.scroll-container {
+  height: 85vh;
+  overflow-y: scroll;
+}
+
+.chatroom form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.chatroom .inputs {
+  display: flex;
+  gap: var(--edge-gap);
+  margin: var(--edge-gap);
+}
+
+.chatroom .inputs img {
+  width: 70%;
+  height: 70%;
+}
+
+.chatroom form input {
+  width: 100%;
+  height: 4rem;
+  font-size: 2rem;
+  background-color: #2f3434;
+  color: #f7f9f9;
+  border: none;
+  padding: 8px;
+  padding-left: 20px;
+  border-radius: 50px;
+}
+
+.chatroom form input:focus {
+  outline: none;
+}
+
+.inputs .submit {
+  background-color: #95ccf1;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 64px;
+  display: grid;
+  place-items: center;
+}
+
+.message-wrapper {
+  background-color: #2c3e50;
+  width: max-content;
+  padding: 10px 16px;
+  border-radius: 30px;
+  display: grid;
+  place-items: center;
+  max-width: 75%;
+}
+
+.message-img {
+  border-radius: 50%;
+  height: 3rem;
+}
+
+.sent,
+.received {
+  margin: 5px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.sent {
+  flex-direction: row-reverse;
+  padding-right: var(--edge-gap);
+}
+
+.received {
+  padding-left: var(--edge-gap);
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --edge-gap: 12px;
+  }
+  .chatroom {
+    width: 100vw;
+    width: 100dvw;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .chatroom form input {
+    height: 3rem;
+    font-size: 1.2rem;
+  }
 }
